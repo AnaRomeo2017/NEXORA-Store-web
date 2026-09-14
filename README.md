@@ -27,9 +27,8 @@ npm run typecheck
 2. عدّل بيانات التواصل (`NEXT_PUBLIC_PHONE` / `NEXT_PUBLIC_WHATSAPP` / `NEXT_PUBLIC_EMAIL`).
    > القيم الافتراضية في `src/config/site.ts` **مبدئية (placeholder)** ولا تظهر في الموقع
    > إلا بعد ضبطها فعلياً.
-3. اضبط `NEXT_PUBLIC_NEXORA_WINDOWS_URL` برابط المثبّت، أو ضع الملف في
-   `public/downloads/NEXORA-Store-Setup-0.1.0.exe`.
-   الإصدار الرسمي: [NEXORA Store 0.1.0](https://github.com/AnaRomeo2017/NEXORA-Store-web/releases/tag/v0.1.0).
+3. رابط تحميل ويندوز الافتراضي هو مجلد Google Drive.
+   يمكن تغييره عبر `NEXT_PUBLIC_NEXORA_WINDOWS_URL`.
 
 ## بنية المشروع
 

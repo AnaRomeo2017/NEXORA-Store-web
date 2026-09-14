@@ -309,11 +309,11 @@ export const en: typeof ar = {
       androidNote: 'We will announce the release date once testing is complete.',
       notifyMe: 'Notify me at launch',
       installerNote:
-        'If the download does not start, make sure the installer URL is configured in the site settings, or contact us to receive it directly.',
+        'The download button opens the Google Drive folder. Download NEXORA-Store-Setup-0.1.0.exe from there, then install it.',
       checksumTitle: 'Verify the file',
       checksumNote: 'A SHA-256 checksum is published with each official release when available.',
       stepsTitle: 'Installation steps',
-      step1: 'Download the installer NEXORA-Store-Setup-0.1.0.exe',
+      step1: 'Open the Google Drive folder and download NEXORA-Store-Setup-0.1.0.exe',
       step2: 'Run the file and follow the installation steps',
       step3: 'Open the app and start the 3-day free trial',
       step4: 'For permanent activation, contact us to obtain a license',

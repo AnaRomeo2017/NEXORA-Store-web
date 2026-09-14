@@ -23,9 +23,11 @@ export type DownloadItem = {
 export const NEXORA_VERSION = '0.1.0';
 export const NEXORA_RELEASE_CHANNEL = 'early';
 
-const WINDOWS_URL =
-  process.env.NEXT_PUBLIC_NEXORA_WINDOWS_URL?.trim() ||
-  'https://github.com/AnaRomeo2017/NEXORA-Store-web/releases/download/v0.1.0/NEXORA-Store-Setup-0.1.0.exe';
+/** مجلد التحميل على Google Drive */
+export const WINDOWS_DRIVE_FOLDER_URL =
+  'https://drive.google.com/drive/folders/1BQUU0AQekabEYbOz2W-Na-I0tSIRQM30?usp=drive_link';
+
+const WINDOWS_URL = process.env.NEXT_PUBLIC_NEXORA_WINDOWS_URL?.trim() || WINDOWS_DRIVE_FOLDER_URL;
 
 const ANDROID_URL = process.env.NEXT_PUBLIC_NEXORA_ANDROID_URL?.trim() || '';
 

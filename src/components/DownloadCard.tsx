@@ -91,7 +91,9 @@ export function DownloadCard({ item, locale, dict, className }: DownloadCardProp
 
           <a
             href={item.url}
-            download=""
+            {...(item.url.startsWith('http')
+              ? { target: '_blank', rel: 'noopener noreferrer' }
+              : { download: '' })}
             onClick={() =>
               trackEvent('download_click', { platform: item.id, version: item.version, locale })
             }
