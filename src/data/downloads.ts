@@ -25,7 +25,7 @@ export const NEXORA_RELEASE_CHANNEL = 'early';
 
 /** مجلد التحميل على Google Drive */
 export const WINDOWS_DRIVE_FOLDER_URL =
-  'https://drive.google.com/drive/folders/1BQUU0AQekabEYbOz2W-Na-I0tSIRQM30?usp=drive_link';
+  'https://drive.google.com/drive/folders/1BQUU0AQekabEYbOz2W-Na-I0tSIRQM30';
 
 const WINDOWS_URL = process.env.NEXT_PUBLIC_NEXORA_WINDOWS_URL?.trim() || WINDOWS_DRIVE_FOLDER_URL;
 

@@ -62,6 +62,7 @@ export function Header({ locale, dict }: HeaderProps) {
   const waHref = whatsappLink(defaultWhatsAppMessage(locale), locale) ?? localePath(locale, 'contact');
 
   return (
+    <>
     <header
       className={cn(
         'sticky top-0 z-50 w-full transition-all duration-300',
@@ -145,16 +146,13 @@ export function Header({ locale, dict }: HeaderProps) {
           </button>
         </div>
       </div>
+    </header>
 
-      {/* قائمة الموبايل */}
+      {open ? (
       <div
         id="mobile-menu"
-        className={cn(
-          'fixed inset-x-0 bottom-0 z-40 overflow-y-auto border-t border-border bg-background px-5 pb-8 pt-4 transition-all duration-300 lg:hidden',
-          open ? 'visible opacity-100' : 'invisible opacity-0',
-        )}
+        className="fixed inset-x-0 bottom-0 z-[60] overflow-y-auto border-t border-border bg-background px-5 pb-[max(2rem,env(safe-area-inset-bottom))] pt-4 lg:hidden"
         style={{ top: 'var(--header-height)' }}
-        hidden={!open}
       >
         <nav className="flex flex-col gap-1" aria-label={dict.nav.menu}>
           {navItems.map((item) => (
@@ -192,7 +190,8 @@ export function Header({ locale, dict }: HeaderProps) {
           />
         </div>
       </div>
-    </header>
+      ) : null}
+    </>
   );
 }
 
