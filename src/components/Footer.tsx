@@ -184,11 +184,24 @@ export function Footer({ locale, dict }: FooterProps) {
       </div>
 
       <div className="border-t border-border">
-        <div className="container-page flex flex-col items-center justify-between gap-2 py-5 text-xs text-muted sm:flex-row">
+        <div className="container-page flex flex-col items-center justify-between gap-3 py-5 text-xs text-muted sm:flex-row">
           <p className="nums">
             © {year} {brandName} — {dict.footer.rights}
           </p>
-          <p>{dict.common.madeWith}</p>
+          <nav className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
+            <Link
+              href={localePath(locale, 'privacy')}
+              className="hover:text-[var(--brand-blue-600)] dark:hover:text-[var(--brand-cyan-400)]"
+            >
+              {dict.footer.privacy}
+            </Link>
+            <Link
+              href={localePath(locale, 'terms')}
+              className="hover:text-[var(--brand-blue-600)] dark:hover:text-[var(--brand-cyan-400)]"
+            >
+              {dict.footer.terms}
+            </Link>
+          </nav>
         </div>
       </div>
     </footer>

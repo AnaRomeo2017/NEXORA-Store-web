@@ -14,6 +14,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'products/nexora-store',
     'blog',
     'contact',
+    'privacy',
+    'terms',
     ...(hasPortfolio ? ['portfolio'] : []),
   ];
 

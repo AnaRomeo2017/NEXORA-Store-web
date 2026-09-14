@@ -448,6 +448,8 @@ export const en: typeof ar = {
     followUs: 'Follow us',
     rights: 'All rights reserved',
     downloadNexora: 'Download NEXORA Store',
+    privacy: 'Privacy Policy',
+    terms: 'Terms of Service',
   },
 
   notFound: {

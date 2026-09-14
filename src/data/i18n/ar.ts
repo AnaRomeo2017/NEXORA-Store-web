@@ -447,6 +447,8 @@ export const ar = {
     followUs: 'تابعنا',
     rights: 'جميع الحقوق محفوظة',
     downloadNexora: 'تحميل NEXORA Store',
+    privacy: 'سياسة الخصوصية',
+    terms: 'شروط الخدمة',
   },
 
   notFound: {

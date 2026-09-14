@@ -17,6 +17,8 @@ const nextConfig: NextConfig = {
     return [
       { source: '/nexora-store', destination: '/ar/products/nexora-store', permanent: false },
       { source: '/download', destination: '/ar/products/nexora-store', permanent: false },
+      { source: '/privacy-policy', destination: '/ar/privacy', permanent: false },
+      { source: '/terms-of-service', destination: '/ar/terms', permanent: false },
     ];
   },
 };
