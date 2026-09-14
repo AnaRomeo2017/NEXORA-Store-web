@@ -25,7 +25,7 @@ export const NEXORA_RELEASE_CHANNEL = 'early';
 
 const WINDOWS_URL =
   process.env.NEXT_PUBLIC_NEXORA_WINDOWS_URL?.trim() ||
-  '/downloads/NEXORA-Store-Setup-0.1.0.exe';
+  'https://github.com/AnaRomeo2017/NEXORA-Store-web/releases/download/v0.1.0/NEXORA-Store-Setup-0.1.0.exe';
 
 const ANDROID_URL = process.env.NEXT_PUBLIC_NEXORA_ANDROID_URL?.trim() || '';
 

@@ -29,6 +29,7 @@ npm run typecheck
    > إلا بعد ضبطها فعلياً.
 3. اضبط `NEXT_PUBLIC_NEXORA_WINDOWS_URL` برابط المثبّت، أو ضع الملف في
    `public/downloads/NEXORA-Store-Setup-0.1.0.exe`.
+   الإصدار الرسمي: [NEXORA Store 0.1.0](https://github.com/AnaRomeo2017/NEXORA-Store-web/releases/tag/v0.1.0).
 
 ## بنية المشروع
 

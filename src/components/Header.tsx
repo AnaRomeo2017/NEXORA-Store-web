@@ -71,7 +71,7 @@ export function Header({ locale, dict }: HeaderProps) {
       )}
       style={{ height: 'var(--header-height)' }}
     >
-      <div className="container-page flex h-full items-center justify-between gap-4">
+      <div className="container-page flex h-full min-w-0 items-center justify-between gap-4">
         <Link
           href={localePath(locale)}
           className="flex shrink-0 items-center gap-2.5"
@@ -116,25 +116,22 @@ export function Header({ locale, dict }: HeaderProps) {
           ))}
         </nav>
 
-        <div className="flex items-center gap-2">
-          <LanguageSwitcher
-            locale={locale}
-            label={dict.common.switchToEnglish}
-            switchLabel={dict.common.switchLanguage}
-            className="hidden sm:inline-flex"
-          />
+        <div className="flex min-w-0 items-center gap-2">
+          <div className="max-sm:hidden">
+            <LanguageSwitcher
+              locale={locale}
+              label={dict.common.switchToEnglish}
+              switchLabel={dict.common.switchLanguage}
+            />
+          </div>
           <ThemeToggle label={dict.common.toggleTheme} />
 
-          <ButtonLink
-            href={waHref}
-            external
-            variant="primary"
-            size="md"
-            className="hidden xl:inline-flex"
-          >
-            {dict.cta.consult}
-            <CtaArrow size={16} strokeWidth={2.2} aria-hidden />
-          </ButtonLink>
+          <div className="max-xl:hidden">
+            <ButtonLink href={waHref} external variant="primary" size="md">
+              {dict.cta.consult}
+              <CtaArrow size={16} strokeWidth={2.2} aria-hidden />
+            </ButtonLink>
+          </div>
 
           <button
             type="button"

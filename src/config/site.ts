@@ -63,7 +63,9 @@ const WHATSAPP = (() => {
 const EMAIL = contactFromEnv('NEXT_PUBLIC_EMAIL', 'info@example.com');
 
 /** روابط التواصل الاجتماعي — فارغة حتى توفر حسابات رسمية */
-const SOCIAL_LINKS: SocialLinks = {};
+const SOCIAL_LINKS: SocialLinks = {
+  github: 'https://github.com/AnaRomeo2017/NEXORA-Store-web',
+};
 
 /** إحصائيات تسويقية — كلها معطّلة لعدم توفر أرقام موثوقة للعرض */
 const STATS: SiteStat[] = [
