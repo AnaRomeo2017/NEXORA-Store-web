@@ -45,7 +45,14 @@ export function LanguageSwitcher({
       lang={target}
       aria-label={switchLabel}
       title={switchLabel}
-      onClick={() => trackEvent('language_switch', { from: locale, to: target })}
+      onClick={() => {
+        try {
+          document.cookie = `NEXT_LOCALE=${target};path=/;max-age=31536000`;
+        } catch {
+          /* ignore */
+        }
+        trackEvent('language_switch', { from: locale, to: target });
+      }}
       className={cn(
         'inline-flex h-10 items-center gap-1.5 rounded-xl border border-border px-3 text-sm font-semibold text-foreground/80 transition-colors hover:border-[var(--brand-blue-600)] hover:text-[var(--brand-blue-600)] dark:hover:border-[var(--brand-cyan-400)] dark:hover:text-[var(--brand-cyan-400)]',
         className,

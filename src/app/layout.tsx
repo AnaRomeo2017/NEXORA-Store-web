@@ -45,7 +45,7 @@ export const viewport: Viewport = {
  */
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html suppressHydrationWarning className={cairo.variable}>
+    <html lang="ar" dir="rtl" suppressHydrationWarning className={cairo.variable}>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>

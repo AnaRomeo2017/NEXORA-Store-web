@@ -1,37 +1,13 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
-
-const LOCALES = ['ar', 'en'] as const;
-const DEFAULT_LOCALE = 'ar';
+import { defaultLocale, locales } from '@/lib/i18n';
 
 const PUBLIC_FILE = /\.[^/]+$/;
 
-/** كشف اللغة من الكوكيز ثم من ترويسة المتصفح */
-function detectLocale(request: NextRequest): string {
-  const cookieLocale = request.cookies.get('NEXT_LOCALE')?.value;
-  if (cookieLocale && LOCALES.includes(cookieLocale as (typeof LOCALES)[number])) {
-    return cookieLocale;
-  }
-
-  const header = request.headers.get('accept-language');
-  if (header) {
-    const preferred = header
-      .split(',')
-      .map((part) => {
-        const [tag, q] = part.trim().split(';q=');
-        return { tag: (tag ?? '').toLowerCase(), q: q ? Number(q) : 1 };
-      })
-      .sort((a, b) => b.q - a.q);
-
-    for (const { tag } of preferred) {
-      if (tag.startsWith('ar')) return 'ar';
-      if (tag.startsWith('en')) return 'en';
-    }
-  }
-
-  return DEFAULT_LOCALE;
-}
-
+/**
+ * المسارات بدون بادئة لغة تُحوَّل دائماً إلى العربية.
+ * الإنجليزية تبقى متاحة عبر `/en` عند اختيار المستخدم لها صراحة.
+ */
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
@@ -45,7 +21,7 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  const hasLocale = LOCALES.some(
+  const hasLocale = locales.some(
     (locale) => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`),
   );
 
@@ -53,12 +29,14 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  const locale = detectLocale(request);
   const url = request.nextUrl.clone();
-  url.pathname = pathname === '/' ? `/${locale}` : `/${locale}${pathname}`;
+  url.pathname = pathname === '/' ? `/${defaultLocale}` : `/${defaultLocale}${pathname}`;
 
   const response = NextResponse.redirect(url);
-  response.cookies.set('NEXT_LOCALE', locale, { path: '/', maxAge: 60 * 60 * 24 * 365 });
+  response.cookies.set('NEXT_LOCALE', defaultLocale, {
+    path: '/',
+    maxAge: 60 * 60 * 24 * 365,
+  });
   return response;
 }
 
